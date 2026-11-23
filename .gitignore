@@ -44,3 +44,13 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Taival - environment and local configuration
+.env.*
+!.env.example
+
+# Firebase local deployment cache
+.firebase/
+
+# Firebase Admin SDK credentials (if used later)
+*service-account*.json
