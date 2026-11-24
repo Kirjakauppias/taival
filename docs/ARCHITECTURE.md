@@ -197,3 +197,17 @@ The following principles guide the development of Taival:
 - Testability
 - Clear documentation
 - Secure data handling
+
+### Application Theme
+
+The application uses Material 3 with centralized theme configuration.
+
+**Files:**
+- `lib/app/theme/app_theme.dart` – light and dark themes
+- `lib/app/theme/app_colors.dart` – application colors and event category colors
+
+The application supports light and dark themes based on the system's appearance preference.
+
+Calendar event categories use distinct colors to improve visual identification.
+
+Theme configuration is tested using automated unit and widget tests.

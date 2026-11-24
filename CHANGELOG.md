@@ -6,6 +6,18 @@ The project follows Semantic Versioning.
 
 ## [Unreleased]
 
+
+### Added
+- Centralized application color definitions
+- Material 3 light and dark themes
+- System theme preference support
+- Color definitions for four calendar event categories
+- Automated theme tests
+
+### Changed
+- Updated the main application widget to use centralized themes
+
+
 ### Planned
 - Responsive calendar interface
 - Event categories
