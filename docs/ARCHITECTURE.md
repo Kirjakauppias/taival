@@ -211,3 +211,22 @@ The application supports light and dark themes based on the system's appearance 
 Calendar event categories use distinct colors to improve visual identification.
 
 Theme configuration is tested using automated unit and widget tests.
+
+### Responsive Application Layout
+
+Taival uses a responsive application shell based on Flutter's `LayoutBuilder`.
+
+The layout adapts according to the available screen width:
+
+- Below 800 logical pixels: Material 3 `NavigationBar`
+- At or above 800 logical pixels: Material 3 `NavigationRail`
+
+**Components:**
+
+- `responsive_scaffold.dart` – responsive layout and navigation controls
+- `taival_shell.dart` – selected view state and application shell
+- `calendar_screen.dart` – calendar-specific user interface
+
+Navigation currently uses placeholder views. Full routing and additional screens will be implemented in future development phases.
+
+Responsive layout behavior is verified with widget tests at different viewport sizes.

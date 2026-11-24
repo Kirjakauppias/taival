@@ -13,6 +13,11 @@ The project follows Semantic Versioning.
 - System theme preference support
 - Color definitions for four calendar event categories
 - Automated theme tests
+- Responsive application layout for mobile and desktop
+- Adaptive NavigationBar and NavigationRail
+- Application shell with basic view selection
+- Placeholder views for events and settings
+- Responsive layout widget tests
 
 ### Changed
 - Updated the main application widget to use centralized themes
