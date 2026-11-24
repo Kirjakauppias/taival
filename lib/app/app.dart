@@ -1,8 +1,8 @@
 // Tuodaan kalenterinäkymä käyttöön.
 import 'package:flutter/material.dart';
 
+import 'layout/taival_shell.dart';
 import 'theme/app_theme.dart';
-import '../features/calendar/presentation/calendar_screen.dart';
 
 // Sovelluksen pääwidget.
 class TaivalApp extends StatelessWidget {
@@ -26,8 +26,8 @@ class TaivalApp extends StatelessWidget {
       // Seuraa käyttöjärjestelmän väriasetusta.
       themeMode: ThemeMode.system,
 
-      // Sovelluksen ensimmäinen nakymä.
-      home: CalendarScreen(),
+      // Responsiivinen sovellusrakenne.
+      home: const TaivalShell(),
     );
   }
 }
