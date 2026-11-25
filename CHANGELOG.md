@@ -6,31 +6,23 @@ The project follows Semantic Versioning.
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-11-25
 
 ### Added
-- Centralized application color definitions
+- Feature-based application architecture
 - Material 3 light and dark themes
-- System theme preference support
-- Color definitions for four calendar event categories
-- Automated theme tests
-- Responsive application layout for mobile and desktop
+- Centralized application color palette
+- Responsive mobile and desktop layouts
 - Adaptive NavigationBar and NavigationRail
-- Application shell with basic view selection
-- Placeholder views for events and settings
-- Responsive layout widget tests
-- URL-based navigation using go_router
-- Dedicated routes for Calendar, Events and Settings
-- Shared navigation shell using ShellRoute
-- Support for direct URL navigation
-- Path-based URLs without hash fragments
+- URL-based routing using go_router
+- Calendar, Events and Settings routes
 - Custom error page for unknown routes
-- Automated routing widget tests
+- Automated widget tests
 
 ### Changed
-- Updated the main application widget to use centralized themes
-- Replaced index-based navigation with route-based navigation
+- Separated application initialization and UI components
+- Replaced index-based navigation with URL-based routing
 - Updated application initialization to use MaterialApp.router
-- Updated TaivalShell to derive navigation state from the active route
 
 
 ### Planned
