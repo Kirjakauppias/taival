@@ -1,42 +1,46 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../features/calendar/presentation/calendar_screen.dart';
+import '../router/app_router.dart';
 import 'responsive_scaffold.dart';
 
-/// Sovelluksen navigoinnin ja näkymien hallinta.
-class TaivalShell extends StatefulWidget {
-  const TaivalShell({super.key});
+/// Taivalin sovellusrunko ja navigoinnin yhdistäminen reitteihin.
+class TaivalShell extends StatelessWidget {
+  const TaivalShell({super.key, required this.location, required this.child});
 
-  @override
-  State<TaivalShell> createState() => _TaivalShellState();
-}
+  // Nykyisen sivun URL-polku.
+  final String location;
 
-class _TaivalShellState extends State<TaivalShell> {
-  // Oletuksena näytetään kalenteri.
-  int _selectedIndex = 0;
+  // Reitittimen toimittama sivun sisältö.
+  final Widget child;
+
+  // Navigointikohteiden osoitteet.
+  static const List<String> _paths = [
+    AppRoutes.calendar,
+    AppRoutes.events,
+    AppRoutes.settings,
+  ];
 
   @override
   Widget build(BuildContext context) {
-    // Nykyiset näkymät.
-    // Menot ja asetukset ovat vielä paikkamerkkejä.
-    const pages = <Widget>[
-      CalendarScreen(),
-      Center(child: Text('Menot-näkymä rakennetaan myöhemmin.')),
-      Center(child: Text('Asetukset-näkymä rakennetaan myöhemmin.')),
-    ];
+    // Selvitetään aktiivisen sivun indeksi URL:n perusteella.
+    final selectedIndex = _paths.indexOf(location);
 
     return ResponsiveScaffold(
-      selectedIndex: _selectedIndex,
+      selectedIndex: selectedIndex == -1 ? 0 : selectedIndex,
 
-      // Päivitetään valittu navigointikohde.
+      // Käyttäjä valitsee navigointikohteen.
       onDestinationSelected: (index) {
-        setState(() {
-          _selectedIndex = index;
-        });
+        final destination = _paths[index];
+
+        // Ei navigoida uudelleen jo avoinna olevalle sivulle.
+        if (destination != location) {
+          context.go(destination);
+        }
       },
 
-      // Näytetään valittu sisältö.
-      child: pages[_selectedIndex],
+      // Reitittimen antama sivun sisältö.
+      child: child,
     );
   }
 }

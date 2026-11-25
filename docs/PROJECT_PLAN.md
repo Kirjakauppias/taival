@@ -51,3 +51,43 @@ Development will proceed incrementally. The first versions will use local sample
 - Notifications and reminders
 - Additional user preferences
 - Progressive Web App improvements
+
+
+## Development Progress
+
+### v0.2.0 – Application Foundation
+
+Status: In progress
+
+Completed:
+
+- Feature-based project structure
+- Material 3 application themes
+- Centralized application colors
+- Responsive application layout
+- Mobile and desktop navigation components
+- Automated theme and layout tests
+- URL-based application routing
+- Automated routing tests
+
+Remaining:
+
+- Complete Issue #7 integration into main
+- Final verification of the application foundation
+- Prepare the v0.2.0 release
+
+### Next Development Phase
+
+The next phase will focus on calendar functionality.
+
+Planned features:
+
+- Monthly calendar view
+- Daily event listing
+- Event data model
+- Four event categories
+- Local sample event data
+- Calendar navigation between months
+
+Firebase integration will be implemented
+after the core calendar functionality.

@@ -1,33 +1,42 @@
-// Tuodaan kalenterinäkymä käyttöön.
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-import 'layout/taival_shell.dart';
+import 'router/app_router.dart';
 import 'theme/app_theme.dart';
 
-// Sovelluksen pääwidget.
-class TaivalApp extends StatelessWidget {
+/// Taival-sovelluksen pääwidget.
+class TaivalApp extends StatefulWidget {
   const TaivalApp({super.key});
 
   @override
+  State<TaivalApp> createState() => _TaivalAppState();
+}
+
+class _TaivalAppState extends State<TaivalApp> {
+  // Luodaan reititin kerran tämän widgetin elinkaaren aikana.
+  late final GoRouter _router = AppRouter.createRouter();
+
+  @override
+  void dispose() {
+    // Vapautetaan reitittimen resurssit.
+    _router.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      // Sovelluksen nimi.
+    return MaterialApp.router(
       title: 'Taival',
 
-      // Poistetaan debug-merkintä.
       debugShowCheckedModeBanner: false,
 
-      // Vaalea teema.
+      // Säilytetään olemassa olevat teemat.
       theme: AppTheme.light,
-
-      // Tumma teema
       darkTheme: AppTheme.dark,
-
-      // Seuraa käyttöjärjestelmän väriasetusta.
       themeMode: ThemeMode.system,
 
-      // Responsiivinen sovellusrakenne.
-      home: const TaivalShell(),
+      // Otetaan uusi reititysjärjestelmä käyttöön.
+      routerConfig: _router,
     );
   }
 }

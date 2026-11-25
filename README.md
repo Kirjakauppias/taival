@@ -32,6 +32,61 @@ The project is currently in its setup phase.
 
 ## Getting started
 
+## Current Features
+
+Taival is currently in active development.
+
+Implemented functionality:
+
+- Flutter Web application
+- Feature-based project architecture
+- Material 3 light and dark themes
+- System theme preference support
+- Responsive mobile and desktop layouts
+- Adaptive NavigationBar and NavigationRail
+- URL-based routing using go_router
+- Calendar, Events and Settings navigation
+- Custom error page
+- Automated widget tests
+
+Calendar event management, authentication and
+cloud synchronization are planned features.
+
+## Navigation
+
+Taival supports the following routes:
+
+| Route | Description |
+|---|---|
+| `/calendar` | Calendar view |
+| `/events` | Events view |
+| `/settings` | Settings view |
+
+The application uses path-based URLs and
+supports browser navigation.
+
+## Running Locally
+
+```bash
+flutter pub get
+flutter run -d chrome
+```
+
+## Testing
+
+Run static analysis:
+
+```bash
+flutter analyze
+```
+
+Run automated tests:
+
+```bash
+flutter test
+```
+
+
 ### Prerequisites
 
 - Flutter SDK
@@ -53,7 +108,9 @@ Replace `USERNAME` with the repository owner's GitHub username.
 
 ## Documentation
 
-See `docs/PROJECT_PLAN.md` for the development roadmap and `CHANGELOG.md` for version history.
+- [Project Plan](docs/PROJECT_PLAN.md)
+- [Architecture](docs/ARCHITECTURE.md)
+- [Changelog](CHANGELOG.md)
 
 ## Future development
 
