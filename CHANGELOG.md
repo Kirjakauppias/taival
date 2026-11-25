@@ -18,9 +18,19 @@ The project follows Semantic Versioning.
 - Application shell with basic view selection
 - Placeholder views for events and settings
 - Responsive layout widget tests
+- URL-based navigation using go_router
+- Dedicated routes for Calendar, Events and Settings
+- Shared navigation shell using ShellRoute
+- Support for direct URL navigation
+- Path-based URLs without hash fragments
+- Custom error page for unknown routes
+- Automated routing widget tests
 
 ### Changed
 - Updated the main application widget to use centralized themes
+- Replaced index-based navigation with route-based navigation
+- Updated application initialization to use MaterialApp.router
+- Updated TaivalShell to derive navigation state from the active route
 
 
 ### Planned

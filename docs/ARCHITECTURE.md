@@ -230,3 +230,121 @@ The layout adapts according to the available screen width:
 Navigation currently uses placeholder views. Full routing and additional screens will be implemented in future development phases.
 
 Responsive layout behavior is verified with widget tests at different viewport sizes.
+
+
+## Application Routing
+
+### Overview
+
+Taival uses the go_router package for declarative,
+URL-based navigation in Flutter Web.
+
+The routing system supports:
+
+- Direct navigation to application routes
+- Browser Back and Forward navigation
+- Synchronization between the URL and navigation controls
+- Shared layouts across application views
+- Custom error handling for unknown routes
+
+### Route Configuration
+
+The routing configuration is centralized in:
+
+`lib/app/router/app_router.dart`
+
+Available routes:
+
+| Path | View |
+|---|---|
+| `/` | Redirects to `/calendar` |
+| `/calendar` | Calendar view |
+| `/events` | Events view |
+| `/settings` | Settings view |
+
+### Architectural Components
+
+**AppRouter**
+
+Defines the application's routes, redirects,
+shared shell and error handling.
+
+**TaivalShell**
+
+Connects the current route to the selected
+navigation destination.
+
+The active destination is derived from the
+current URL instead of local widget state.
+
+**ResponsiveScaffold**
+
+Provides adaptive navigation components:
+
+- NavigationBar for narrow screens
+- NavigationRail for wider screens
+
+**MaterialApp.router**
+
+Integrates the GoRouter configuration with
+the Flutter application.
+
+### Navigation Flow
+
+1. The user selects a navigation destination.
+2. TaivalShell calls context.go() with the target path.
+3. GoRouter resolves the requested route.
+4. The corresponding view is displayed.
+5. The selected navigation destination is updated.
+
+### URL Strategy
+
+Taival uses Flutter's path URL strategy.
+
+Example:
+
+`/calendar`
+
+instead of:
+
+`/#/calendar`
+
+The URL strategy is configured in `lib/main.dart`
+using `usePathUrlStrategy()`.
+
+Production hosting must support SPA fallback
+rewrites so that direct navigation to application
+routes works correctly.
+
+### Error Handling
+
+Unknown routes display a custom error page.
+
+The error page provides a navigation action
+that returns the user to the calendar view.
+
+### Testing
+
+Routing is covered by automated widget tests
+in `test/app_routing_test.dart`.
+
+Tests verify:
+
+- Calendar route rendering
+- Events route rendering
+- Selected navigation destination
+- Navigation between routes
+- Unknown route handling
+- Navigation from the error page
+
+Browser navigation behavior is also verified
+through manual testing.
+
+### Future Development
+
+Potential improvements include:
+
+- Authentication-protected routes
+- Event detail routes
+- Route parameters
+- Deep linking to individual events
