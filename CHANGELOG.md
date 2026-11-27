@@ -18,6 +18,10 @@ The project follows Semantic Versioning.
 - Calendar, Events and Settings routes
 - Custom error page for unknown routes
 - Automated widget tests
+- Immutable CalendarEvent data model
+- EventCategory enum with four categories
+- Support for timed and all-day events
+- Event validation and automated unit tests
 
 ### Changed
 - Separated application initialization and UI components

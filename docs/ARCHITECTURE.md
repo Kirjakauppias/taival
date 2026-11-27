@@ -348,3 +348,35 @@ Potential improvements include:
 - Event detail routes
 - Route parameters
 - Deep linking to individual events
+
+
+### Calendar Event Data Model
+
+Calendar events are represented using an immutable
+CalendarEvent class.
+
+The model is located in:
+
+`lib/features/events/models/calendar_event.dart`
+
+Event categories are defined separately in:
+
+`lib/features/events/models/event_category.dart`
+
+The model supports:
+
+- Unique event IDs
+- Titles and optional descriptions
+- Start and end timestamps
+- Four event categories
+- All-day events
+- Time range validation
+
+Event time intervals use an exclusive end boundary.
+
+The model is independent of Flutter UI components.
+
+Monthly and weekly calendar views will share
+the same CalendarEvent model.
+
+Model validation is covered by automated unit tests.
