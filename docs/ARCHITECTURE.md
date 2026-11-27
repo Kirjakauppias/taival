@@ -380,3 +380,32 @@ Monthly and weekly calendar views will share
 the same CalendarEvent model.
 
 Model validation is covered by automated unit tests.
+
+
+### Sample Event Repository
+
+The application uses a local sample event repository
+during the Calendar Core development phase.
+
+Location:
+
+`lib/features/events/data/sample_event_repository.dart`
+
+Responsibilities:
+
+- Provide predefined sample calendar events
+- Return events in chronological order
+- Retrieve events by calendar day
+- Retrieve events overlapping a date range
+- Handle all-day and multi-day events
+
+Event intervals use an exclusive end boundary.
+
+The current implementation uses fixed local DateTime
+values and does not persist data.
+
+Future development will introduce a repository
+abstraction and a Firebase-backed implementation.
+
+Automated tests cover data retrieval, chronological
+ordering, overlapping time ranges and immutability.

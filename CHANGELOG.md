@@ -22,6 +22,12 @@ The project follows Semantic Versioning.
 - EventCategory enum with four categories
 - Support for timed and all-day events
 - Event validation and automated unit tests
+- Local sample event repository
+- Sample events for all four calendar categories
+- Chronological event sorting
+- Event retrieval by day and date range
+- Support for multi-day and overnight sample events
+- Automated repository unit tests
 
 ### Changed
 - Separated application initialization and UI components
